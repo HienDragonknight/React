@@ -1,0 +1,51 @@
+.App {
+  min-height: 100vh;
+  padding: 20px;
+  background: var(--app-background);
+  transition: background 0.3s ease;
+}
+
+/* Loading spinner */
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  color: var(--loading-text-color);
+}
+
+.loader {
+  border: 5px solid var(--loader-border);
+  border-top: 5px solid var(--loader-border-top);
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  animation: spin 1s linear infinite;
+  margin-bottom: 20px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.loading-container p {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+/* Theme Variables */
+:root[data-theme='light'] {
+  --app-background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --loading-text-color: white;
+  --loader-border: rgba(255, 255, 255, 0.3);
+  --loader-border-top: white;
+}
+
+:root[data-theme='dark'] {
+  --app-background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  --loading-text-color: #dfe6e9;
+  --loader-border: rgba(223, 230, 233, 0.3);
+  --loader-border-top: #dfe6e9;
+}
